@@ -20,8 +20,8 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	python-pip \
 	firefox \
 	xvfb \
-	apt-utils && \
-	x11vnc && \
+	apt-utils \
+	x11vnc \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
