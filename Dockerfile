@@ -29,12 +29,14 @@ RUN pip install --upgrade pip
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 RUN cd faraday-dev
 
-# RUN chown root:root -R /root/faraday-dev/ && \
+$ RUN chown root:root -R /root/faraday-dev/ && \
 # 	chmod a+x /root/faraday-dev/
 
 EXPOSE 5984
 EXPOSE 5985	
-	
+
+RUN ls	
+RUN echo $PWD
 RUN ./install.sh
 RUN ./faraday-server.py
 RUN ./faraday.py
