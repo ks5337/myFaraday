@@ -1,7 +1,7 @@
 FROM infobyte/faraday
 MAINTAINER Mark Zhang
 
-pip install --upgrade pip
+CMD ["pip install --upgrade pip","run"]
 
 EXPOSE 5984
 EXPOSE 5985
