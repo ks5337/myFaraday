@@ -37,8 +37,6 @@ EXPOSE 5984
 EXPOSE 5985	
 
 WORKDIR /root/faraday-dev
-RUN ls	
-RUN echo $PWD
 RUN ./install.sh
 RUN ./faraday-server.py
 RUN ./faraday.py
