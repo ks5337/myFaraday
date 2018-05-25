@@ -19,6 +19,10 @@ RUN pip install --upgrade pip
 RUN cd /root
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 RUN cd faraday-dev
+RUN echo $PWD
+RUN ls
+RUN cd ..
+RUN ls
 RUN /root/faraday-dev/install.sh
 
 EXPOSE 5984
