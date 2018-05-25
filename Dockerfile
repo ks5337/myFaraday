@@ -26,17 +26,18 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 
 RUN pip install --upgrade pip
 
-RUN git clone https://github.com/ks5337/faraday.git /root/faraday-dev
+RUN git clone https://github.com/ks5337/faraday.git faraday-dev
+cd faraday-dev
 
-RUN chown root:root -R /root/faraday-dev/ && \
-	chmod a+x /root/faraday-dev/
+# RUN chown root:root -R /root/faraday-dev/ && \
+# 	chmod a+x /root/faraday-dev/
 
 EXPOSE 5984
 EXPOSE 5985	
 	
-RUN /root/faraday-dev/install.sh
-RUN /root/faraday-dev/faraday-server.py
-RUN /root/faraday-dev/faraday.py
+RUN ./install.sh
+RUN ./faraday-server.py
+RUN ./faraday.py
 
 
 
