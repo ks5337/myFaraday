@@ -20,6 +20,19 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	python-pip \
 	firefox \
 	xvfb \
+	couchdbkit \
+	restkit \
+	requests \
+	flask \
+	twisted \
+	sqlalchemy \
+	service_identity \
+	pyasn1-modules \
+	mockito \
+	whoosh \
+	IPy\
+	tornado \
+	colorama \
 	x11vnc &&\
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
