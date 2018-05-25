@@ -26,8 +26,8 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 
 RUN pip install --upgrade pip
 
+RUN cd root
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
-RUN cd faraday-dev
 
 # RUN chown root:root -R /root/faraday-dev/ && \
 # 	chmod a+x /root/faraday-dev/
@@ -35,6 +35,7 @@ RUN cd faraday-dev
 EXPOSE 5984
 EXPOSE 5985	
 
+RUN cd faraday-dev
 RUN ls	
 RUN echo $PWD
 RUN ./install.sh
