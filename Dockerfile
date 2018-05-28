@@ -38,8 +38,8 @@ EXPOSE 5985
 WORKDIR /root/faraday-dev
 RUN ./install.sh
 
-ENTRYPOINT ["./faraday-server.py"]
-#RUN ./faraday.py
+RUN./faraday-server.py
+RUN ./faraday.py
 
 
 
