@@ -41,8 +41,8 @@ RUN ./install.sh
 
 RUN pip2 install -r requirements_server.txt
 
-RUN ./faraday-server.py
-RUN ./faraday.py
+ENTRYPOINT ["./faraday-server.py"]
+#RUN ./faraday.py
 
 
 
