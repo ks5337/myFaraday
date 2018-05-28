@@ -36,7 +36,10 @@ EXPOSE 5984
 EXPOSE 5985	
 
 WORKDIR /root/faraday-dev
+
 RUN ./install.sh
+
+RUN pip2 install -r requirements_server.txt
 
 RUN ./faraday-server.py
 RUN ./faraday.py
