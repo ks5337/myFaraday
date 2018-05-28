@@ -32,14 +32,21 @@ RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 RUN chown root:root -R /root/faraday-dev/ && \
  	chmod a+x /root/faraday-dev/
 
-EXPOSE 5984
-EXPOSE 5985	
-
 WORKDIR /root/faraday-dev
 
 RUN ./install.sh
 
+RUN apt-get update
+
+RUN apt-get install build-essential ipython python-setuptools \
+					python-pip python-dev libssl-dev libffi-dev couchdb \
+					pkg-config libssl-dev libffi-dev libxml2-dev \
+					libxslt1-dev libfreetype6-dev libpng12-dev
+
 RUN pip2 install -r requirements_server.txt
+
+EXPOSE 5984
+EXPOSE 5985	
 
 ENTRYPOINT ["./faraday-server.py"]
 #RUN ./faraday.py
