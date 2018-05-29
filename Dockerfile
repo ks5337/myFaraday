@@ -48,7 +48,8 @@ RUN pip2 install -r requirements_server.txt
 EXPOSE 5984
 EXPOSE 5985	
 
-ENTRYPOINT ["./faraday-server.py","--no-setup=true"]
+RUN ./faraday-server.py --no-setup=True
+#ENTRYPOINT ["./faraday-server.py","--no-setup"]
 #RUN ./faraday.py
 
 
