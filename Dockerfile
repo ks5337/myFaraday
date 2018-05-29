@@ -26,8 +26,7 @@ RUN pip install --upgrade pip
 
 WORKDIR /root
 
-RUN adduser couchdb && \
-    mkdir -p /usr/local/var/lib/couchdb && \
+RUN mkdir -p /usr/local/var/lib/couchdb && \
     chown -R couchdb /usr/local/var/lib/couchdb && \
     mkdir -p /usr/local/var/log/couchdb && \
     chown -R couchdb /usr/local/var/log/couchdb && \
