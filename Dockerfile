@@ -32,6 +32,7 @@ RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
     chown root:root -R /root/faraday-dev/ && \
     chmod a+x /root/faraday-dev/ && \
+	ls -al && \
 	chmod 755 /root/faraday-dev/startup.sh
 
 WORKDIR /root/faraday-dev
