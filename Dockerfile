@@ -43,7 +43,7 @@ RUN pip install --upgrade pip
 #	xvfb \
 #	x11vnc 
 
-RUN start couchdb
+RUN couchdb start
 
 RUN curl localhost:5984
 
