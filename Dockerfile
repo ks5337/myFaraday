@@ -31,7 +31,8 @@ RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
     chown root:root -R /root/faraday-dev/ && \
- 	chmod a+x /root/faraday-dev/
+ 	chmod a+x /root/faraday-dev/ && \
+	dpkg --configure couchdb
 
 WORKDIR /root/faraday-dev
 
