@@ -26,13 +26,7 @@ RUN pip install --upgrade pip
 
 WORKDIR /root
 
-RUN mkdir -p /usr/local/var/lib/couchdb && \
-    chown -R couchdb /usr/local/var/lib/couchdb && \
-    mkdir -p /usr/local/var/log/couchdb && \
-    chown -R couchdb /usr/local/var/log/couchdb && \
-    mkdir -p /usr/local/var/run && \
-    chown -R couchdb /usr/local/var/run && \
-    update-rc.d couchdb defaults && \
+RUN chown -R couchdb /var/run/couchdb && \
     couchdb start && \
 	curl localhost:5984
 	
