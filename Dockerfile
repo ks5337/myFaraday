@@ -4,7 +4,6 @@ MAINTAINER Mark Zhang
 RUN apt-get update && apt-get install -q -y --fix-missing \
 	git \
 	curl \
-	software-properties-common \
 	build-essential \
 	ipython \
 	python-setuptools \
@@ -25,29 +24,21 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	
 RUN pip install --upgrade pip
 
-#	make \
-#	automake \
-#	autoconf \
-#	gcc g++ \
-#	openjdk-8-jdk \
-#	ruby \
-#	wget \
-#	curl \
-#	xmlstarlet \
-#	unzip \
-#	openbox \
-#	xterm \
-#	net-tools \
-#	ruby-dev \
-#	firefox \
-#	xvfb \
-#	x11vnc 
-
-RUN couchdb start
-
-RUN curl localhost:5984
-
 WORKDIR /root
+
+RUN adduser couchdb && \
+    mkdir -p /usr/local/var/lib/couchdb && \
+    chown -R couchdb /usr/local/var/lib/couchdb && \
+    mkdir -p /usr/local/var/log/couchdb && \
+    chown -R couchdb /usr/local/var/log/couchdb && \
+    mkdir -p /usr/local/var/run && \
+    chown -R couchdb /usr/local/var/run && \
+    update-rc.d couchdb defaults && \
+    cp /usr/local/etc/init.d/couchdb /etc/init.d/ && \
+    /etc/init.d/couchdb start && \
+	curl localhost:5984
+	
+
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 
 RUN chown root:root -R /root/faraday-dev/ && \
