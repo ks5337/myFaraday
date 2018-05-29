@@ -4,6 +4,7 @@ MAINTAINER Mark Zhang
 RUN apt-get update && apt-get install -q -y --fix-missing \
 	git \
 	curl \
+	software-properties-common \
 	build-essential \
 	ipython \
 	python-setuptools \
@@ -41,6 +42,8 @@ RUN pip install --upgrade pip
 #	firefox \
 #	xvfb \
 #	x11vnc 
+
+RUN start couchdb
 
 RUN curl localhost:5984
 
