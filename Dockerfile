@@ -3,6 +3,7 @@ MAINTAINER Mark Zhang
 
 RUN apt-get update && apt-get install -q -y --fix-missing \
 	git \
+	curl \
 	build-essential \
 	ipython \
 	python-setuptools \
@@ -40,6 +41,8 @@ RUN pip install --upgrade pip
 #	firefox \
 #	xvfb \
 #	x11vnc 
+
+RUN curl localhost:5984
 
 WORKDIR /root
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
