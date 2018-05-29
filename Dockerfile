@@ -26,15 +26,11 @@ RUN pip install --upgrade pip
 
 WORKDIR /root
 
-RUN mkdir /var/run/couchdb && \
-    chown -R couchdb /var/run/couchdb && \
-    couchdb start && \
-	curl localhost:5984
-	
-
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 
-RUN chown root:root -R /root/faraday-dev/ && \
+RUN mkdir /var/run/couchdb && \
+    chown -R couchdb /var/run/couchdb && \
+    chown root:root -R /root/faraday-dev/ && \
  	chmod a+x /root/faraday-dev/
 
 WORKDIR /root/faraday-dev
@@ -46,8 +42,8 @@ RUN pip2 install -r requirements_server.txt
 EXPOSE 5984
 EXPOSE 5985	
 
-RUN ./faraday-server.py
-#ENTRYPOINT ["./faraday-server.py"]
+#RUN ./faraday-server.py
+ENTRYPOINT ["./faraday-server.py"]
 #RUN ./faraday.py
 
 
