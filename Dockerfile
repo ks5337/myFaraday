@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 	
+RUN pip install --upgrade pip
+
 #	make \
 #	automake \
 #	autoconf \
@@ -35,14 +37,9 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 #	xterm \
 #	net-tools \
 #	ruby-dev \
-#	python-pip \
 #	firefox \
 #	xvfb \
-#	x11vnc &&\
-#	apt-get clean && \
-#	rm -rf /var/lib/apt/lists/*
-
-#RUN pip install --upgrade pip
+#	x11vnc 
 
 WORKDIR /root
 RUN git clone https://github.com/ks5337/faraday.git faraday-dev
