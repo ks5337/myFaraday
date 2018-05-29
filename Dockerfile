@@ -31,8 +31,7 @@ RUN git clone https://github.com/ks5337/faraday.git faraday-dev
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
     chown root:root -R /root/faraday-dev/ && \
- 	chmod a+x /root/faraday-dev/ && \
-	dpkg --configure couchdb
+ 	chmod a+x /root/faraday-dev/ 
 
 WORKDIR /root/faraday-dev
 
@@ -44,7 +43,7 @@ EXPOSE 5984
 EXPOSE 5985	
 
 #RUN ./faraday-server.py
-ENTRYPOINT ["./faraday-server.py"]
+ENTRYPOINT ["./startup.sh"]
 #RUN ./faraday.py
 
 
