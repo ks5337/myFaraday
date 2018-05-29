@@ -1,7 +1,11 @@
 FROM ubuntu:16.04
 MAINTAINER Mark Zhang
 
-#RUN apt-get update && apt-get install -q -y --fix-missing \
+RUN apt-get update && apt-get install -q -y --fix-missing \
+	git &&\
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+	
 #	make \
 #	automake \
 #	autoconf \
@@ -12,7 +16,7 @@ MAINTAINER Mark Zhang
 #	curl \
 #	xmlstarlet \
 #	unzip \
-#	git \
+
 #	openbox \
 #	xterm \
 #	net-tools \
