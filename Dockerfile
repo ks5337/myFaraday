@@ -33,8 +33,7 @@ RUN mkdir -p /usr/local/var/lib/couchdb && \
     mkdir -p /usr/local/var/run && \
     chown -R couchdb /usr/local/var/run && \
     update-rc.d couchdb defaults && \
-    cp /usr/local/etc/init.d/couchdb /etc/init.d/ && \
-    /etc/init.d/couchdb start && \
+    couchdb start && \
 	curl localhost:5984
 	
 
