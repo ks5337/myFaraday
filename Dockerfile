@@ -4,7 +4,6 @@ MAINTAINER Mark Zhang
 RUN apt-get update && apt-get install -q -y --fix-missing \
 	git \
 	curl \
-	unzip \
 	build-essential \
 	ipython \
 	python-setuptools \
