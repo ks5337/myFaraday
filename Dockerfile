@@ -43,9 +43,6 @@ RUN pip2 install -r requirements_server.txt
 EXPOSE 5984
 EXPOSE 5985
 
-RUN couchdb -b
-RUN ./faraday-server.py
-
 ENTRYPOINT ["./startup.sh"]
 
 
