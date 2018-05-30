@@ -30,7 +30,8 @@ RUN git clone https://github.com/ks5337/faraday.git faraday-dev2
 
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
-	mkdir /root/.faraday/confog && \
+	mkdir /root/.faraday && \
+	mkdir /root/.faraday/config && \
 	chown root:root -R /root/.faraday/ && \
     chown root:root -R /root/faraday-dev2/ && \
     chmod a+x /root/faraday-dev2/ && \
