@@ -28,32 +28,34 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 	
-RUN pip install --upgrade pip
-
+RUN pip install --upgrade pip && \
+    pip install psycopg2-binary && \
+    pip install lxml && \
+	pip install restkit && \
+	pip install beautifulsoup4 
+	
 WORKDIR /root
 
-RUN git clone https://github.com/ks5337/faraday.git faraday-dev3
+RUN git clone https://github.com/ks5337/faraday.git faraday-dev4
 
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
 	mkdir /root/.faraday && \
 	mkdir /root/.faraday/config && \
 	chown root:root -R /root/.faraday/ && \
-    chown root:root -R /root/faraday-dev3/ && \
-    chmod a+x /root/faraday-dev3/ && \
-    chmod 755 /root/faraday-dev3/startup.sh
+    chown root:root -R /root/faraday-dev4/ && \
+    chmod a+x /root/faraday-dev4/ && \
+    chmod 755 /root/faraday-dev4/startup.sh
 
-WORKDIR /root/faraday-dev3
+WORKDIR /root/faraday-dev4
 
 RUN ./install.sh
 
-RUN pip2 install -r requirements_server.txt
-RUN pip2 install -r requirements.txt
-RUN pip2 install -r requirements_extras.txt
+RUN pip2 install -r requirements_server.txt && \
+    pip2 install -r requirements.txt && \
+    pip2 install -r requirements_extras.txt
 #RUN pip2 install vext
 #RUN pip2 install vext.pygtk
-
-RUN pip install psycopg2-binary
 
 EXPOSE 5984
 EXPOSE 5985
