@@ -31,7 +31,7 @@ RUN pip install --upgrade pip
 
 WORKDIR /root
 
-RUN git clone https://github.com/ks5337/faraday.git faraday-dev4
+RUN git clone https://github.com/ks5337/faraday.git faraday-dev6
 
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
