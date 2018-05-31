@@ -31,18 +31,18 @@ RUN pip install --upgrade pip
 	
 WORKDIR /root
 
-RUN git clone https://github.com/ks5337/faraday.git faraday-dev1
+RUN git clone https://github.com/ks5337/faraday.git faraday-dev2
 
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
 	mkdir /root/.faraday && \
 	mkdir /root/.faraday/config && \
 	chown root:root -R /root/.faraday/ && \
-    chown root:root -R /root/faraday-dev1/ && \
-    chmod a+x /root/faraday-dev1/ && \
-    chmod 755 /root/faraday-dev1/startup.sh
+    chown root:root -R /root/faraday-dev2/ && \
+    chmod a+x /root/faraday-dev2/ && \
+    chmod 755 /root/faraday-dev2/startup.sh
 
-WORKDIR /root/faraday-dev1
+WORKDIR /root/faraday-dev2
 
 RUN ./install.sh
 
@@ -59,6 +59,11 @@ RUN pip install psycopg2-binary && \
 
 EXPOSE 5984
 EXPOSE 5985
+
+RUN cp -f ./server.ini ../.faraday/config && \
+    chmod 777 ../.faraday/config/server.ini
+
+RUN python2 ./faraday-server.py
 
 ENTRYPOINT ["./startup.sh"]
 
