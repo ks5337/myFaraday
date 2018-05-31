@@ -52,11 +52,11 @@ RUN mkdir /var/run/couchdb && \
 	mkdir /root/.faraday && \
 	mkdir /root/.faraday/config && \
 	chown root:root -R /root/.faraday/ && \
-    chown root:root -R /root/faraday-dev4/ && \
-    chmod a+x /root/faraday-dev4/ && \
-    chmod 755 /root/faraday-dev4/startup.sh
+    chown root:root -R /root/faraday-dev6/ && \
+    chmod a+x /root/faraday-dev6/ && \
+    chmod 755 /root/faraday-dev6/startup.sh
 
-WORKDIR /root/faraday-dev4
+WORKDIR /root/faraday-dev6
 
 RUN ./install.sh
 
