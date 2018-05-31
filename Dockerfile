@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	libxml2-dev \
 	libxslt1-dev \
 	libfreetype6-dev \
-	libpng12-dev 
+	libpng12-dev \
 	libpq-dev \
 	gir1.2-gtk-3.0 \
 	gir1.2-vte-2.90 \
