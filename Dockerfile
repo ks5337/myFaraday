@@ -23,15 +23,8 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	gir1.2-gtk-3.0 \
 	gir1.2-vte-2.91 \
 	python-gobject \
-	Python \
-	GTK3 \
-	PyGobject \
-	Vte \
 	zsh \
-	couchdbkit \
-	mockito \
-	whoosh \
-	argparse 
+	argparse \
 	IPy \
 	restkit \
 	requests \
