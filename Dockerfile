@@ -49,8 +49,8 @@ RUN ./install.sh
 RUN pip2 install -r requirements_server.txt
 RUN pip2 install -r requirements.txt
 RUN pip2 install -r requirements_extras.txt
-RUN pip2 install vext
-RUN pip2 install vext.pygtk
+#RUN pip2 install vext
+#RUN pip2 install vext.pygtk
 
 EXPOSE 5984
 EXPOSE 5985
