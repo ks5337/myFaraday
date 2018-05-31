@@ -23,7 +23,21 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	gir1.2-gtk-3.0 \
 	gir1.2-vte-2.91 \
 	python-gobject \
-	zsh &&\
+	Python \
+	GTK3 \
+	PyGobject \
+	Vte \
+	zsh \
+	couchdbkit \
+	mockito \
+	whoosh \
+	argparse 
+	IPy \
+	restkit \
+	requests \
+	tornado \
+	flask \
+	colorama && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 	
