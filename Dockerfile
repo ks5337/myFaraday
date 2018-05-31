@@ -27,11 +27,7 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 	
-RUN pip install --upgrade pip && \
-    pip install psycopg2-binary && \
-    pip install lxml && \
-	pip install restkit && \
-	pip install beautifulsoup4 
+RUN pip install --upgrade pip 
 	
 WORKDIR /root
 
@@ -55,6 +51,11 @@ RUN pip2 install -r requirements_server.txt && \
     pip2 install -r requirements_extras.txt
 #RUN pip2 install vext
 #RUN pip2 install vext.pygtk
+
+RUN pip install psycopg2-binary && \
+    pip install lxml && \
+	pip install restkit && \
+	pip install beautifulsoup4 
 
 EXPOSE 5984
 EXPOSE 5985
