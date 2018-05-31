@@ -52,6 +52,8 @@ RUN pip2 install -r requirements_extras.txt
 #RUN pip2 install vext
 #RUN pip2 install vext.pygtk
 
+RUN pip install psycopg2-binary
+
 EXPOSE 5984
 EXPOSE 5985
 
