@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	libpng12-dev \
 	libpq-dev \
 	gir1.2-gtk-3.0 \
-	gir1.2-vte-2.90 \
+	gir1.2-vte-2.91 \
 	python-gobject \
 	zsh &&\
 	apt-get clean && \
