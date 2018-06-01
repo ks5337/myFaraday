@@ -31,18 +31,18 @@ RUN pip install --upgrade pip
 	
 WORKDIR /root
 
-RUN git clone https://github.com/ks5337/faraday.git faraday-dev7
+RUN git clone https://github.com/ks5337/faraday.git faraday-dev8
 
 RUN mkdir /var/run/couchdb && \
     chown -R couchdb /var/run/couchdb && \
 	mkdir /root/.faraday && \
 	mkdir /root/.faraday/config && \
 	chown root:root -R /root/.faraday/ && \
-    chown root:root -R /root/faraday-dev7/ && \
-    chmod a+x /root/faraday-dev7/ && \
-    chmod 755 /root/faraday-dev7/startup.sh
+    chown root:root -R /root/faraday-dev8/ && \
+    chmod a+x /root/faraday-dev8/ && \
+    chmod 755 /root/faraday-dev8/startup.sh
 
-WORKDIR /root/faraday-dev7
+WORKDIR /root/faraday-dev8
 
 RUN ./install.sh
 
